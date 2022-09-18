@@ -1,0 +1,23 @@
+<table>
+    <tr *ngFor="let x of axis_x">
+      <td *ngFor="let y of axis_y"><button (click)="selectPosition(x,y)" [disabled]="board[x][y]">{{board[x][y] || '-'}}</button></td>
+    </tr>
+</table>
+
+<span>Current player: {{currentPlayer}}</span>
+<br>
+<button (click)="reset()">Reset game</button>
+<br>
+
+<table>
+  <thead>
+    <th >X win's </th>
+    <th >O win's </th>
+    <th >Ties </th>
+  </thead>
+  <tbody>
+    <td>{{winnerX}}</td>
+    <td>{{winnerO}}</td>
+    <td>{{tie}}</td>
+  </tbody>
+</table>
